@@ -404,7 +404,6 @@ services:
 
   vector:
     image: timberio/vector:0.28.1-alpine
-    entrypoint: ["sleep"]
     healthcheck:
       test:
         [
@@ -419,11 +418,11 @@ services:
       interval: 5s
       retries: 3
     volumes:
-      #- ./volumes/logs/vector.yml:/etc/vector/vector.yml:ro
+      - ./volumes/logs/vector.yml:/etc/vector/vector.yml:ro
       - ${DOCKER_SOCKET_LOCATION}:/var/run/docker.sock:ro
     environment:
       LOGFLARE_API_KEY: ${LOGFLARE_API_KEY}
-    command: ["infinity"]
+    command: [ "--config", "/etc/vector/vector.yml" ]
 
   # Update the DATABASE_URL if you are using an external Postgres database
   supavisor:
