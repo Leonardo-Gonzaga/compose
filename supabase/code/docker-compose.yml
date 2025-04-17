@@ -8,7 +8,7 @@ name: supabase
 
 services:
   studio:
-    image: supabase/studio:latest
+    image: supabase/studio:20250317-6955350
     restart: unless-stopped
     healthcheck:
       test:
