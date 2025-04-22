@@ -81,7 +81,7 @@ services:
   # APPLICATION
   ############################################################
   api:
-    image: langgenius/dify-api:latest
+    image: langgenius/dify-api:1.2.0
     restart: unless-stopped
     env_file: .env
     depends_on:
@@ -95,7 +95,7 @@ services:
       - "5001:5001"
 
   worker:
-    image: langgenius/dify-worker:latest
+    image: langgenius/dify-api:1.2.0
     restart: unless-stopped
     env_file: .env
     depends_on:
@@ -103,7 +103,7 @@ services:
       - redis
 
   web:
-    image: langgenius/dify-web:latest
+    image: langgenius/dify-web:1.2.0
     restart: unless-stopped
     env_file: .env
     depends_on:
