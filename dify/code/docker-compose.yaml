@@ -1,6 +1,6 @@
-x-shared-env: &shared-api-worker-env
-  # referencia o arquivo .env que ficará no mesmo diretório
-  <<: [ *env_file ]
+version: "3.9"
+
+x-shared-env: &shared-api-worker-env {}
 
 services:
   # ---------------------------
