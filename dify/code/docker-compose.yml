@@ -55,7 +55,7 @@ services:
   # SECURITY & SANDBOX
   ############################################################
   ssrf_proxy:
-    image: langgenius/ssrf-proxy:latest
+    image: ubuntu/squid:latest
     restart: unless-stopped
     environment:
       HTTP_PORT:  ${SSRF_HTTP_PORT}
