@@ -152,5 +152,9 @@ networks:
     internal: true
 
 volumes:
-  # volumes são criados automaticamente pelo EasyPanel
-  
+  app_storage:
+  db_data:
+  redis_data:
+  weaviate_data:
+  sandbox_dep:
+  plugin_daemon_data:
